@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f;
     public float jump = 5f;
 
+    private bool bonusJump;
+    private float jumpPickup;
     
     
     public Transform groundCheck;
@@ -39,6 +41,15 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        if (jumpPickup > 1f)
+        {
+            bonusJump = true;
+        }
+        else
+        {
+            bonusJump = false;
+        }
+        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -64,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            ;
+            //Sprint
 
 
         }
@@ -72,6 +83,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("Character using Controller");
+        }
+
+        if (Input.GetKeyDown(KeyCode.X) && bonusJump = true)
+        {
+            velocity.y = Mathf.Sqrt(jump * -2f * gravity);
+            
         }
         
     }

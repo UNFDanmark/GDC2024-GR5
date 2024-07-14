@@ -35,7 +35,9 @@ public class Pickup1 : MonoBehaviour
 
         void Pickup()
         {
-            Instantiate(pickupEffect, transform.position, transform.rotation);
+            Instantiate(pickupEffect, transform.position, transform.rotation); //add nogle effekter i inspektoren
+            
+            // giv "Playermovement" +1 bonusJump
             
 
         }
