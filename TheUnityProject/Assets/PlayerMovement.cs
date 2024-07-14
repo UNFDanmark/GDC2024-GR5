@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     float x;
     float z;
     
+    public GameObject gameOverScreen;
         
     public CharacterController controller;
 
@@ -15,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f;
     public float jump = 5f;
 
+    
     
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -58,6 +61,30 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            ;
+
+
+        }
+        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Character using Controller");
+        }
         
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.CompareTag("Enemy"))//ændrer dette her string til en hvilken som helst fjende eller farlig ting ved dets tag navn.
+        {  
+            gameOverScreen.SetActive(true);
+        }
+    }
+    
+    
+    
+    
 }
