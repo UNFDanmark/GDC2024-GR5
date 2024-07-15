@@ -8,7 +8,7 @@ public class Pickup1 : MonoBehaviour
 
     [SerializeField] private float rotationSpeed = 200;
     
-    //public GameObject pickupEffect;
+    public GameObject pickupEffect;
     
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class Pickup1 : MonoBehaviour
 
         void Pickup(Collider player)
         {
-            //Instantiate(pickupEffect, transform.position, transform.rotation); //add nogle effekter i inspektoren
+            Instantiate(pickupEffect, transform.position, transform.rotation); //add nogle effekter i inspektoren
 
             PlayerMovement pickup = player.GetComponent<PlayerMovement>();
             pickup.jumpPickup += 1f;
