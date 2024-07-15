@@ -6,7 +6,9 @@ public class Pickup1 : MonoBehaviour
 {
     private Transform transform;
 
-    public GameObject pickupEffect;
+    [SerializeField] private float rotationSpeed = 200;
+    
+    //public GameObject pickupEffect;
     
     // Start is called before the first frame update
     void Start()
@@ -17,28 +19,32 @@ public class Pickup1 : MonoBehaviour
     // Update is called once per frame
      void Update()
     {
-        /*
-        transform.Rotate(2f, 0f, 0f); //transform.up
-        //Få denne til at forsvinde når den collider med min character
         
-        */
+        transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f); 
+        
+        
+        
 
     }
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Pickup();
+            Pickup(other);
             
             Destroy(gameObject);
         }
 
-        void Pickup()
+        void Pickup(Collider player)
         {
-            Instantiate(pickupEffect, transform.position, transform.rotation); //add nogle effekter i inspektoren
-            
-            // giv "Playermovement" +1 bonusJump
-            
+            //Instantiate(pickupEffect, transform.position, transform.rotation); //add nogle effekter i inspektoren
+
+            PlayerMovement pickup = player.GetComponent<PlayerMovement>();
+            pickup.jumpPickup += 1f;
+
+
+            // giv "PlayerMovement" +1 bonusJump
+
 
         }
     }
