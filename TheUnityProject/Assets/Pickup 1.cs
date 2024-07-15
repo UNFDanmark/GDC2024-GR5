@@ -43,7 +43,7 @@ public class Pickup1 : MonoBehaviour
             pickup.jumpPickup += 1f;
 
 
-            // giv "PlayerMovement" +1 bonusJump
+            
 
 
         }

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class ExplodableRock : MonoBehaviour
 {
-    
+    public Transform other;
+    public GameObject explosionEffect;
     
     // Start is called before the first frame update
     void Start()
@@ -23,13 +24,23 @@ public class ExplodableRock : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-        gameObject.SetActive(false);
+            //check distance to player from each dynamite
+            float dist = (other.transform.position - transform.position).sqrMagnitude;
+            
+            
+            
+            //place dynamite on the nearest location
+            gameObject.SetActive(false);
+            
+            Instantiate(explosionEffect, transform.position, transform.rotation);
+            
+            
             
         }
         //change player bool for placement of dynamite to true 
         
-        //
+        
         
     }
-    // 
+     
 }
