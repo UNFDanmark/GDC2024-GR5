@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef350da9127a73449b52c654e4ee68de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 0}
+  rotationSpeed: 200
 --- !u!1 &1655606964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,7 +1668,8 @@ MonoBehaviour:
   speed: 15
   gravity: -9.81
   jump: 7
-  superJumpCooldown: 3
+  superJump: 10
+  jumpPickup: 0
   groundCheck: {fileID: 2134092040}
   groundDistance: 0.4
   groundMask:
