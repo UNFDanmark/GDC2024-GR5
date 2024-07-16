@@ -21,9 +21,6 @@ public class Pickup1 : MonoBehaviour
     {
         
         transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f); 
-        
-        
-        
 
     }
     void OnTriggerEnter(Collider other)
@@ -41,10 +38,10 @@ public class Pickup1 : MonoBehaviour
 
             PlayerMovement pickup = player.GetComponent<PlayerMovement>();
             pickup.jumpPickup += 1f;
-
-
             
-
+            
+            
+            
 
         }
     }
