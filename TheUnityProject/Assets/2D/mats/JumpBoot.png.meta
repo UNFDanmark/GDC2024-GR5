@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:TheUnityProject/Assets/Textures-UV/DynamiteUV.png.meta
-guid: 203e1adaddecf5148902c7f3bc5e48b6
-========
-guid: c4fba852c5c35da478fccca9a46f01d4
->>>>>>>> eb6b96c1deb039e1555186017b5dbdf663fc32a0:TheUnityProject/Assets/2D/mats/JumpBoot.png.meta
+guid: 737e76b81d94a5846a37e2f50527137c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,16 +63,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
