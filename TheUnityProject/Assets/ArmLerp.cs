@@ -6,8 +6,10 @@ public class ArmLerp : MonoBehaviour
 {
     [SerializeField] private Transform arm;
 	[SerializeField] private Transform cam;
+	
 
 	[SerializeField] Quaternion lastRot;
+	[SerializeField] Quaternion curRot;
 
     [SerializeField] private Vector3 distToTarget = new Vector3(0.5943477f, -0.7366863f, 1.614395f);
 	[SerializeField] Vector3 axis;
@@ -22,18 +24,18 @@ public class ArmLerp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lastRot = transfrom.rotation;
+        lastRot = arm.transform.rotation;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-	
+	/*
         Quaternion curRot = transform.rotation;
 
 
-	Quaternion deltaRot = curRot * Quaternion.inverse(lastRot);
-	deltaRotation.ToAngleAxis(out angle, out axis);
+	Quaternion deltaRot = curRot * Quaternion.inverse(lastRot); //Quaternion.inverse does not exist
+	deltaRotation.ToAngleAxis(out angle, out axis); 
 
 	if(angle > 180f){
 	angle -= 180;
@@ -45,7 +47,7 @@ public class ArmLerp : MonoBehaviour
 	transform.rotation *= Quaternion.Euler(angularVelocity * Time.deltaTime);
 
 	lastRot = curRot;
-	
+	*/
     }
 /*
 	void FromCamPOV{
