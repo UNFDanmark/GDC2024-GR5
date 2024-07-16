@@ -14,10 +14,9 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 12f;
-    
-    [FormerlySerializedAs("grravity")] public float gravity = -9.81f;
+    private Vector3 velocity;
+    public float gravity = -9.81f;
     public float jump = 5f;
-    
     public float superJump = 10f;
     
     private float bonusJump;
@@ -28,14 +27,19 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-    
-    private Vector3 velocity;
-
     private bool isGrounded;
+    
+
+    
+    
+    public AudioSource jumpSound;
+    public AudioSource landingSound;
+    
     
     // Start is called before the first frame update
     void Start()
     {
+        jumpSound = GetComponent<AudioSource>();
         
         
     }
@@ -44,27 +48,33 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
-        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
+        
+        
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
             maxJumpAmount = jumpAmount + jumpPickup;
+            landingSound.Play();
         }
 
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             velocity.y = Mathf.Sqrt(jump * -2f * gravity);
             maxJumpAmount -= 1;
+            
+            jumpSound.Play();
+            
+
         }
 
         if (isGrounded == false && Input.GetButtonDown("Jump") && jumpPickup > 0 && maxJumpAmount > 0)
         {
             velocity.y = Mathf.Sqrt(superJump * -2f * gravity);
             maxJumpAmount -= 1;
+            
+            jumpSound.Play();
+
         }
         
         x = Input.GetAxis("Horizontal");
@@ -77,7 +87,6 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
-
         
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -90,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene("Character using Controller");
         }
-        /*      LAV DETTE OM TIL ET PICKUP SYSTEM AF EN ANDEN POWER
+        /*      LAV DETTE OM TIL ET PICKUP SYSTEM AF EN ANDEN ONCE PER USE POWER
         if (Input.GetKeyDown(KeyCode.X) && "pickup" == true)
         {
             velocity.y = Mathf.Sqrt("pickupPower" * -2f * gravity);
