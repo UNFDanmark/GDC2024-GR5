@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class introSequence : MonoBehaviour
 {
+/*
 	PlayerMove = this.getComponent("Movement");
     void Start()
     {
@@ -19,4 +20,5 @@ public class introSequence : MonoBehaviour
 	//instanciate the screen right in front of player when ground hit
 	
     }
+*/
 }
