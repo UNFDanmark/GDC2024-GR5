@@ -32,14 +32,14 @@ public class PlayerMovement : MonoBehaviour
 
     
     
-    public AudioSource jumpSound;
-    public AudioSource landingSound;
+    //public AudioSource jumpSound;
+    //public AudioSource landingSound;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        jumpSound = GetComponent<AudioSource>();
+        //jumpSound = GetComponent<AudioSource>();
         
         
     }
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
             maxJumpAmount = jumpAmount + jumpPickup;
-            landingSound.Play();
+            //landingSound.Play();
         }
 
         if (isGrounded && Input.GetButtonDown("Jump"))
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jump * -2f * gravity);
             maxJumpAmount -= 1;
             
-            jumpSound.Play();
+            //jumpSound.Play();
             
 
         }
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(superJump * -2f * gravity);
             maxJumpAmount -= 1;
             
-            jumpSound.Play();
+            //jumpSound.Play();
 
         }
         

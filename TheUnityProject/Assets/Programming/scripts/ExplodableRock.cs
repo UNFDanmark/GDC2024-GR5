@@ -10,7 +10,7 @@ public class ExplodableRock : MonoBehaviour
     public Transform other;
     //public GameObject explosionEffect;
     //public GameObject DynamiteLit;
-    private bool clickedDynamite = false;
+    private bool clickedDynamite;
     
     
     [SerializeField] private GameObject placeholder1;
@@ -20,6 +20,10 @@ public class ExplodableRock : MonoBehaviour
     private GameObject curPlaceholder;
     private float minDistance;
     [SerializeField] private GameObject parent;
+
+    //public AudioSource fuse;
+    //public AudioSource explosionSound;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -32,8 +36,9 @@ public class ExplodableRock : MonoBehaviour
     {
         if (clickedDynamite)
         {
+            
             explosionTimer();
-            Debug.Log(timer);
+            
         }
     }
     void explosionTimer()
@@ -87,13 +92,8 @@ public class ExplodableRock : MonoBehaviour
            
             
             
-                
-            
-            
-            
 
         }
-        
         
         
         
