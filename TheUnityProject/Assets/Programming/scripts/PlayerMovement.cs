@@ -28,26 +28,25 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     private bool isGrounded;
-    
 
-    
-    
-    //public AudioSource jumpSound;
-    //public AudioSource landingSound;
+    public AudioController audioController;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        //jumpSound = GetComponent<AudioSource>();
         
         
+
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        
+        
+        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         
         
@@ -55,15 +54,15 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
             maxJumpAmount = jumpAmount + jumpPickup;
-            //landingSound.Play();
-        }
+            audioController.playAudio(1);
+        }   
 
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             velocity.y = Mathf.Sqrt(jump * -2f * gravity);
             maxJumpAmount -= 1;
             
-            //jumpSound.Play();
+            audioController.playAudio(0);
             
 
         }
@@ -73,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(superJump * -2f * gravity);
             maxJumpAmount -= 1;
             
-            //jumpSound.Play();
+            audioController.playAudio(0);
 
         }
         
@@ -82,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         
         Vector3 move = transform.right * x + transform.forward * z;
         
-        controller.Move(Time.deltaTime * move * speed);
+        controller.Move(move * (Time.deltaTime * speed));
 
         velocity.y += gravity * Time.deltaTime;
 
