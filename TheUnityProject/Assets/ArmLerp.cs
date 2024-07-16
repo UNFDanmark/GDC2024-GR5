@@ -9,6 +9,8 @@ public class ArmLerp : MonoBehaviour
     [SerializeField] private Vector3 distToTarget = new Vector3(0.5943477f, -0.7366863f, 1.614395f);
 
     [SerializeField] private float distDampener = 1f;
+
+    [SerializeField] private float rotDampener = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,9 @@ public class ArmLerp : MonoBehaviour
         Vector3 curPos = Vector3.Lerp(this.transform.position, toPos, distDampener * Time.deltaTime);
         this.transform.position = curPos;
 
-
+        Quaternion toRot = Quaternion.LookRotation(arm.position - this.transform.position, arm.up);
+        Quaternion curRot = Quaternion.Slerp(this.transform.rotation, toRot, rotDampener * Time.deltaTime);
+        this.transform.rotation = curRot;
     }
 }
 
