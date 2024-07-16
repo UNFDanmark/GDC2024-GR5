@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:TheUnityProject/Assets/Textures-UV/DynamiteUV.png.meta
 guid: 203e1adaddecf5148902c7f3bc5e48b6
+========
+guid: c4fba852c5c35da478fccca9a46f01d4
+>>>>>>>> eb6b96c1deb039e1555186017b5dbdf663fc32a0:TheUnityProject/Assets/2D/mats/JumpBoot.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
