@@ -6455,7 +6455,7 @@ GameObject:
   - component: {fileID: 1875856601}
   m_Layer: 8
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6756,6 +6756,11 @@ PrefabInstance:
       propertyPath: pickupEffect
       value: 
       objectReference: {fileID: 989452447}
+    - target: {fileID: 5207140190446170851, guid: 07ac8fb495b2ab9458c073539f8e2f0d,
+        type: 3}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 2752146310156475827}
     - target: {fileID: 8172433714867284415, guid: 07ac8fb495b2ab9458c073539f8e2f0d,
         type: 3}
       propertyPath: m_Name
@@ -6979,9 +6984,16 @@ MonoBehaviour:
   bink:
   - {fileID: 8300000, guid: 1ca01057c24f6df4b95c077010781e2a, type: 3}
   - {fileID: 8300000, guid: 23acc4041e496bc4fa99cd6f341c26ee, type: 3}
+  - {fileID: 8300000, guid: 0f7a91e9233448c43af1bf4f0a4fc4aa, type: 3}
   bonk:
   - {fileID: 2752146310156475822}
   - {fileID: 2752146310156475823}
+--- !u!136 &2752146310156475828 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 6015264907871568985, guid: 1593a480a4673244dbb155e32f52bcdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 7198207735600797797}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7198207735600797797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6993,8 +7005,13 @@ PrefabInstance:
     - target: {fileID: 309382718756424907, guid: 1593a480a4673244dbb155e32f52bcdf,
         type: 3}
       propertyPath: m_Name
-      value: FirstPersonPlayer
+      value: JohnnyBgoode
       objectReference: {fileID: 0}
+    - target: {fileID: 4666363731441030018, guid: 1593a480a4673244dbb155e32f52bcdf,
+        type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 2752146310156475828}
     - target: {fileID: 4666363731441030018, guid: 1593a480a4673244dbb155e32f52bcdf,
         type: 3}
       propertyPath: jumpSound
@@ -7064,6 +7081,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6015264907871568985, guid: 1593a480a4673244dbb155e32f52bcdf,
+        type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
