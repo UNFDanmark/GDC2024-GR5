@@ -19,6 +19,7 @@ public class EndScreen : MonoBehaviour
      timerText = gameObject.GetComponent<Text>();
      //timererer = timer.GetComponent<timer>().timerer;
      timererer = chronos.GetComponent<TimeKeep>();
+     
     }
 
     // Update is called once per frame 

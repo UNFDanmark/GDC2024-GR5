@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: -14}
-  m_SizeDelta: {x: 300, y: 30}
+  m_AnchoredPosition: {x: 60, y: -84}
+  m_SizeDelta: {x: 500, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5617051280380753451
 CanvasRenderer:
@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -92,8 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a58aae6ee2d3049a4fa58ae03dff62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 0}
+  timererer: {fileID: 0}
   timerer: 0
-  remainer: 0
+  chronos: {fileID: 0}
 --- !u!1 &3745636682002600081
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,9 +107,8 @@ GameObject:
   - component: {fileID: 6908608267972762539}
   - component: {fileID: 2460030353864634591}
   - component: {fileID: 8038525920512970853}
-  - component: {fileID: 2677720455450145187}
   m_Layer: 5
-  m_Name: Text (Legacy) (2)
+  m_Name: end timer text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,8 +130,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55, y: 117}
-  m_SizeDelta: {x: 300, y: 60}
+  m_AnchoredPosition: {x: 231, y: 143}
+  m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2460030353864634591
 CanvasRenderer:
@@ -162,11 +163,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 75
+    m_MaxSize: 80
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -174,20 +175,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: ravine
---- !u!114 &2677720455450145187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3745636682002600081}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67a58aae6ee2d3049a4fa58ae03dff62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerer: 0
-  remainer: 0
 --- !u!1001 &6401013955099037969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -203,18 +190,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 858783151956492124, guid: e04aa48c613689d41baccb2440891c81,
         type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858783151956492124, guid: e04aa48c613689d41baccb2440891c81,
+        type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 14
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4549989858691305460, guid: e04aa48c613689d41baccb2440891c81,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4549989858691305460, guid: e04aa48c613689d41baccb2440891c81,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4549989858691305460, guid: e04aa48c613689d41baccb2440891c81,
         type: 3}
@@ -234,7 +226,7 @@ PrefabInstance:
     - target: {fileID: 4549989858691305460, guid: e04aa48c613689d41baccb2440891c81,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 63
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 6651259394187860374, guid: e04aa48c613689d41baccb2440891c81,
         type: 3}
@@ -339,7 +331,7 @@ PrefabInstance:
     - target: {fileID: 7522386199418872003, guid: e04aa48c613689d41baccb2440891c81,
         type: 3}
       propertyPath: m_Name
-      value: Endscreen Variant
+      value: victoryScreen
       objectReference: {fileID: 0}
     - target: {fileID: 7522386199418872003, guid: e04aa48c613689d41baccb2440891c81,
         type: 3}
@@ -399,5 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a58aae6ee2d3049a4fa58ae03dff62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 0}
+  timererer: {fileID: 0}
   timerer: 0
-  remainer: 0
+  chronos: {fileID: 0}

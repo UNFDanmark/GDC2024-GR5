@@ -21,7 +21,7 @@ public class timer : MonoBehaviour
     void LateUpdate()
     {
 	    
-        timerer += Time.deltaTime;
+	    timerer += Time.deltaTime;
 	strText = timerer.ToString("#.0");
 	timerText.text = strText;
     }
