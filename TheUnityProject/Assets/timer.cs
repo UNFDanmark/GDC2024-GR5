@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class timer : MonoBehaviour
 {
+	/*
 	[SerializeField] public float timerer;
 	Text timerText;
     // Start is called before the first frame update
@@ -19,4 +20,6 @@ public class timer : MonoBehaviour
         timerer += Time.deltaTime;
 	timerText = "you took" + timerer + " seconds to climb";
     }
-}
+    */
+
+    }

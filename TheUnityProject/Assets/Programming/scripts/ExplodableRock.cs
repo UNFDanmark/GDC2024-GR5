@@ -23,7 +23,6 @@ public class ExplodableRock : MonoBehaviour
     
     public AudioController audioController;
     
-    //private bool dynamite;
     private PlayerMovement playerMovement;
     private bool dynamite;
 
@@ -41,6 +40,7 @@ public class ExplodableRock : MonoBehaviour
         if (clickedDynamite)
         {
             explosionTimer();
+            
         }
     }
     void explosionTimer()
@@ -75,24 +75,28 @@ public class ExplodableRock : MonoBehaviour
             {
                 placeholder1.SetActive(true);
                 //Instantiate(DynamiteLit, transform.position, transform.rotation);
+                audioController.playAudio(5);
                 clickedDynamite = true;
             }
             else if (dist2 == minDistance && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButton(1)))
             {
                 placeholder2.SetActive(true);
                 //Instantiate(DynamiteLit, transform.position, transform.rotation);
+                audioController.playAudio(5);
                 clickedDynamite = true;
             }
             else if (dist3 == minDistance && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButton(1)))
             {
                 placeholder3.SetActive(true);
                 //Instantiate(DynamiteLit, transform.position, transform.rotation);
+                audioController.playAudio(5);
                 clickedDynamite = true;
             }
             else if (dist4 == minDistance && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButton(1)))
             {
                 placeholder4.SetActive(true);
                 //Instantiate(DynamiteLit, transform.position, transform.rotation);
+                audioController.playAudio(5);
                 clickedDynamite = true;
             }
            
