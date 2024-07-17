@@ -30,6 +30,7 @@ public class ArmLerp : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+	    /*
 	
         Quaternion curRot = transform.rotation;
 
@@ -47,7 +48,7 @@ public class ArmLerp : MonoBehaviour
 	transform.rotation *= Quaternion.Euler(angularVelocity * Time.deltaTime);
 
 	lastRot = curRot;
-	
+	*/
     }
 /*
 	void FromCamPOV{
