@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class timer : MonoBehaviour
 {
+	/*
 	[SerializeField] public float timerer;
 	Text timerText;
 	string strText;
@@ -21,4 +22,6 @@ public class timer : MonoBehaviour
 	strText = timerer.ToString("#.0");
 	timerText.text = strText;
     }
-}
+    */
+
+    }
