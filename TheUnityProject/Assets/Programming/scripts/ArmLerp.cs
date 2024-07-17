@@ -30,24 +30,24 @@ public class ArmLerp : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-	/*
+	
         Quaternion curRot = transform.rotation;
 
 
 	Quaternion deltaRot = curRot * Quaternion.inverse(lastRot); //Quaternion.inverse does not exist
-	deltaRotation.ToAngleAxis(out angle, out axis); 
+	deltaRot.ToAngleAxis(out angle, out axis); 
 
 	if(angle > 180f){
 	angle -= 180;
 	}
-	angularVelocity = Vector3.Lerp(axis * angle * Mathf.Deg2Rad / Time.deltatime);
+	angularVelocity = Vector3.Lerp(axis * angle * Mathf.Deg2Rad / Time.deltaTime);
 
-	angularVelocity = Vector3.Lerp(angularVelocity,Vector3.zero, rotDamper*Time.deltaTime);
+	angularVelocity = Vector3.Lerp(angularVelocity,Vector3.zero, rotDampener*Time.deltaTime);
 
 	transform.rotation *= Quaternion.Euler(angularVelocity * Time.deltaTime);
 
 	lastRot = curRot;
-	*/
+	
     }
 /*
 	void FromCamPOV{

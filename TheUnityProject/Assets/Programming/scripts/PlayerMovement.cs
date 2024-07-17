@@ -10,10 +10,9 @@ public class PlayerMovement : MonoBehaviour
     float x;
     float z;
 
-    public GameObject gameOverScreen;
+    public GameObject victoryScreen;
 
     public CharacterController controller;
-    public CapsuleCollider body;
     
 
     public float speed = 12f;
@@ -21,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f;
     public float jump = 5f;
     public float superJump = 10f;
+    private bool isMoving;
+    
 
     private float bonusJump;
     public float jumpPickup;
@@ -34,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
 
     public AudioController audioController;
-    
+
+    public Animator animator;
 
 
     // Start is called before the first frame update
@@ -48,9 +50,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-
+        if (" " || " " || " ")
+        {
+            animator.SetBool("PowerupsogDynamit", true);
+        }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        
         
         
         if (isGrounded && velocity.y < -5)
@@ -86,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
             maxJumpAmount -= 1;
 
             audioController.playAudio(0);
-
         }
 
         x = Input.GetAxis("Horizontal");
@@ -97,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * (Time.deltaTime * speed));
 
         velocity.y += gravity * Time.deltaTime;
-
+ 
         controller.Move(velocity * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -107,6 +112,8 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+        
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("Character using Controller");
@@ -114,20 +121,40 @@ public class PlayerMovement : MonoBehaviour
         /*      LAV DETTE OM TIL ET PICKUP SYSTEM AF EN ANDEN ONCE PER USE POWER
         if (Input.GetKeyDown(KeyCode.X) && "pickup" == true)
         {
-            velocity.y = Mathf.Sqrt("pickupPower" * -2f * gravity);
             "pickup" -= 1f;
         }
         */
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Enemy")) //ændrer dette her string til en hvilken som helst fjende eller farlig ting ved dets tag navn.
+        if (z != 0 || x != 0)
         {
-            gameOverScreen.SetActive(true);
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
         }
     }
     
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("WoodFloor") && isGrounded && isMoving) //&& (no other of the same sound is playing
+        {
+            
+            audioController.playAudio(6);
+            
+        }
+        if (hit.gameObject.CompareTag("StoneFloor") && isGrounded && isMoving) //&& (no other of the same sound is playing
+        {
+            
+            audioController.playAudio(7);
+            
+        }
+        if (hit.gameObject.CompareTag("End")) 
+        {
+            victoryScreen.SetActive(true);
+        }
+    }
+        
 }   
 
     
