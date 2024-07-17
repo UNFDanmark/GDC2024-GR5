@@ -10,6 +10,8 @@ public class Pickup1 : MonoBehaviour
     
     public GameObject pickupEffect;
     
+    public AudioController audioController;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -39,10 +41,8 @@ public class Pickup1 : MonoBehaviour
             PlayerMovement pickup = player.GetComponent<PlayerMovement>();
             pickup.jumpPickup += 1f;
             
+            audioController.playAudio(2);
             
-            
-            
-
         }
     }
     
