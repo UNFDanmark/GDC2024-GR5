@@ -8,17 +8,19 @@ public class timer : MonoBehaviour
 	/*
 	[SerializeField] public float timerer;
 	Text timerText;
+	string strText;
     // Start is called before the first frame update
     void Start()
     {
-     timerText = gameObject.GetComponent<text>();   
+     timerText = gameObject.GetComponent<Text>();   
     }
 
     // Update is called once per frame
     void Update()
     {
         timerer += Time.deltaTime;
-	timerText = "you took" + timerer + " seconds to climb";
+	strText = timerer.ToString("#.0");
+	timerText.text = strText;
     }
     */
 
