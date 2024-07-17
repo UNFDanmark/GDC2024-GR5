@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpPickup;
     private float maxJumpAmount;
     private float jumpAmount = 1;
+    public bool dynamite;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -51,7 +52,12 @@ public class PlayerMovement : MonoBehaviour
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         
+        
         if (isGrounded && velocity.y < -5)
+        {
+            audioController.playAudio(3);
+        }
+        if (isGrounded && velocity.y < -15)
         {
             audioController.playAudio(1);
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup1 : MonoBehaviour
+public class Pickup0 : MonoBehaviour
 {
     private Transform transform;
 

@@ -8,8 +8,7 @@ public class ExplodableRock : MonoBehaviour
 {
     float timer = 3f;
     public Transform other;
-    //public GameObject explosionEffect;
-    //public GameObject DynamiteLit;
+    public GameObject explosionEffect;
     private bool clickedDynamite;
     
     
@@ -20,25 +19,28 @@ public class ExplodableRock : MonoBehaviour
     private GameObject curPlaceholder;
     private float minDistance;
     [SerializeField] private GameObject parent;
+    [SerializeField] private GameObject player;
+    
+    public AudioController audioController;
+    
+    //private bool dynamite;
+    private PlayerMovement playerMovement;
+    private bool dynamite;
 
-    //public AudioSource fuse;
-    //public AudioSource explosionSound;
-    
-    
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        playerMovement = player.GetComponent<PlayerMovement>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        dynamite = playerMovement.dynamite;
+        
         if (clickedDynamite)
         {
-            
             explosionTimer();
-            
         }
     }
     void explosionTimer()
@@ -46,16 +48,20 @@ public class ExplodableRock : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            //Instantiate(explosionEffect, transform.position, transform.rotation);
-            //Destroy(explosionEffect);
-            Destroy((parent), 0.5f);
+            audioController.playAudio(4);
+            Instantiate(explosionEffect, transform.position, transform.rotation);
+            Destroy(parent);
+            
         }
     }
 
+   
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && dynamite)
         {
+            
             //check distance to player from each dynamite
             float dist1 = (other.transform.position - placeholder1.transform.position).sqrMagnitude;
             float dist2 = (other.transform.position - placeholder2.transform.position).sqrMagnitude;
