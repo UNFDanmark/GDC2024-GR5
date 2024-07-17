@@ -141,7 +141,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.6
@@ -356,9 +356,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1ca01057c24f6df4b95c077010781e2a, type: 3}
   - {fileID: 8300000, guid: 23acc4041e496bc4fa99cd6f341c26ee, type: 3}
   - {fileID: 8300000, guid: 0f7a91e9233448c43af1bf4f0a4fc4aa, type: 3}
-  - {fileID: 8300000, guid: 2f403dc3eb23a534d8bb0ac065b65fd4, type: 3}
+  - {fileID: 8300000, guid: b199217d70b8ac745a35f8a7b64d4f62, type: 3}
   - {fileID: 8300000, guid: b1867ef61c1b89d4fa77dd0daa8645fd, type: 3}
   - {fileID: 8300000, guid: cbc0f0b11f8f1dd4ca6b90817d5bb284, type: 3}
+  - {fileID: 8300000, guid: 4841d6505e1d2554aad43357e0ba6a5d, type: 3}
+  - {fileID: 8300000, guid: afa864e73eed1c74a9b11ee5e4999ef3, type: 3}
   bonk:
   - {fileID: 7814509163390055727}
   - {fileID: 6749681682447235100}
@@ -414,7 +416,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 39b1f07daf7aa544096308e5e2cba164, type: 3}
+  - {fileID: 2100000, guid: 0a301a1682a0da94c844d27b6ccfecb7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

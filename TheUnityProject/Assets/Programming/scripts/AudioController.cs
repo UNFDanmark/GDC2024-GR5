@@ -26,6 +26,10 @@ public class AudioController : MonoBehaviour
         {
             if (AudioSource.isPlaying)
             {
+                if (AudioSource.clip == bink[index] && AudioSource.clip != bink[0])
+                {
+                    break;
+                }
                 continue;
             }
 

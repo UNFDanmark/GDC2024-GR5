@@ -29,7 +29,7 @@ public class ExplodableRock : MonoBehaviour
     private void Awake()
     {
         playerMovement = player.GetComponent<PlayerMovement>();
-        
+        audioController = GameObject.Find("JohnnyBgoode").GetComponent<AudioController>();
     }
 
     // Update is called once per frame

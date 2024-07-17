@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f;
     public float jump = 5f;
     public float superJump = 10f;
+    private bool isMoving;
+    
 
     private float bonusJump;
     public float jumpPickup;
@@ -51,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        
         
         
         if (isGrounded && velocity.y < -5)
@@ -86,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
             maxJumpAmount -= 1;
 
             audioController.playAudio(0);
-
         }
 
         x = Input.GetAxis("Horizontal");
@@ -97,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * (Time.deltaTime * speed));
 
         velocity.y += gravity * Time.deltaTime;
-
+ 
         controller.Move(velocity * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -106,6 +108,8 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
+
+        
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -118,6 +122,14 @@ public class PlayerMovement : MonoBehaviour
             "pickup" -= 1f;
         }
         */
+        if (z != 0 || x != 0)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -127,7 +139,23 @@ public class PlayerMovement : MonoBehaviour
             gameOverScreen.SetActive(true);
         }
     }
-    
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("WoodFloor") && isGrounded && isMoving) //&& (no other of the same sound is playing
+        {
+            
+            audioController.playAudio(6);
+            
+        }
+        if (hit.gameObject.CompareTag("StoneFloor") && isGrounded && isMoving) //&& (no other of the same sound is playing
+        {
+            
+            audioController.playAudio(7);
+            
+        }
+    }
+        
 }   
 
     

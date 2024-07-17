@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - WoodFloor
+  - StoneFloor
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,7 @@ public class Pickup0 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioController = GameObject.Find("JohnnyBgoode").GetComponent<AudioController>();
         transform = GetComponent<Transform>();
     }
 
