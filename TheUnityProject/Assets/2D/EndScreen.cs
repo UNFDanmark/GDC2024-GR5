@@ -17,13 +17,13 @@ public class EndScreen : MonoBehaviour
      timerText = gameObject.GetComponent<Text>();   
     }
 
-    // Update is called once per frame
+    // Update is called once per frame 
     void Update()
     {
         timerer += Time.deltaTime;
 	
 	strText = (timerer/60).ToString("#.0");
-	timerText.text = "it took you " + strText + "seconds to reach the surface";
+	timerText.text = "it took you " + strText + " minutes to reach the surface";
     }
 
 }
