@@ -7,6 +7,7 @@ TagManager:
   - Floor
   - WoodFloor
   - StoneFloor
+  - End
   layers:
   - Default
   - TransparentFX

@@ -30,7 +30,7 @@ public class AudioController : MonoBehaviour
                 {
                     break;
                 }
-                continue;
+                continue;   
             }
 
             AudioSource.clip = bink[index];

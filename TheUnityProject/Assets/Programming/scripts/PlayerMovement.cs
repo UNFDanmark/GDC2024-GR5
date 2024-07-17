@@ -10,10 +10,9 @@ public class PlayerMovement : MonoBehaviour
     float x;
     float z;
 
-    public GameObject gameOverScreen;
+    public GameObject victoryScreen;
 
     public CharacterController controller;
-    public CapsuleCollider body;
     
 
     public float speed = 12f;
@@ -36,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
 
     public AudioController audioController;
-    
+
+    public Animator animator;
 
 
     // Start is called before the first frame update
@@ -50,7 +50,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-
+        if (" " || " " || " ")
+        {
+            animator.SetBool("PowerupsogDynamit", true);
+        }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         
@@ -118,7 +121,6 @@ public class PlayerMovement : MonoBehaviour
         /*      LAV DETTE OM TIL ET PICKUP SYSTEM AF EN ANDEN ONCE PER USE POWER
         if (Input.GetKeyDown(KeyCode.X) && "pickup" == true)
         {
-            velocity.y = Mathf.Sqrt("pickupPower" * -2f * gravity);
             "pickup" -= 1f;
         }
         */
@@ -131,14 +133,7 @@ public class PlayerMovement : MonoBehaviour
             isMoving = false;
         }
     }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Enemy")) //ændrer dette her string til en hvilken som helst fjende eller farlig ting ved dets tag navn.
-        {
-            gameOverScreen.SetActive(true);
-        }
-    }
+    
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -153,6 +148,10 @@ public class PlayerMovement : MonoBehaviour
             
             audioController.playAudio(7);
             
+        }
+        if (hit.gameObject.CompareTag("End")) 
+        {
+            victoryScreen.SetActive(true);
         }
     }
         
