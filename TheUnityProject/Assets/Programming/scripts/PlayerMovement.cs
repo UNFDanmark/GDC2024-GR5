@@ -36,25 +36,23 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioController audioController;
 
-    public Animator animator;
+    public AudioSource music;
+    public AudioClip mainTrack;
+    public AudioClip megaSuperHemmeligtTrack;
+    public AudioClip secondaryTrack;
 
-
-    // Start is called before the first frame update
+    public bool secondaryIsPlaying;
+    
     void Start()
     {
-        
+        music.clip = mainTrack;
+        music.Play();
     }
 
-
-    // Update is called once per frame
     void Update()
     {
 
-        /*if ( || " " || " ")
-        {
-            animator.SetBool("PowerupsogDynamit", true);
-        }
-*/
+       
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         
         
@@ -104,26 +102,26 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
  
         controller.Move(velocity * Time.deltaTime);
+       
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.M) && Input.GetKey(KeyCode.O) &&
+            Input.GetKey(KeyCode.G) && Input.GetKey(KeyCode.U) && Input.GetKey(KeyCode.S))
         {
-            //sprint
-
-
+            music.clip = megaSuperHemmeligtTrack;
+            music.Play();
         }
-
+        else if (jumpPickup == 1f && music.clip != megaSuperHemmeligtTrack && music.clip != secondaryTrack)
+        {
+            music.clip = secondaryTrack;
+            music.Play();
+        }
         
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("Character using Controller");
         }
-        /*      LAV DETTE OM TIL ET PICKUP SYSTEM AF EN ANDEN ONCE PER USE POWER
-        if (Input.GetKeyDown(KeyCode.X) && "pickup" == true)
-        {
-            "pickup" -= 1f;
-        }
-        */
+        
         if (z != 0 || x != 0)
         {
             isMoving = true;
@@ -132,6 +130,13 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = false;
         }
+
+        if (isMoving == false )
+        {
+            audioController.stopAudio(6);
+            audioController.stopAudio(7);
+        }
+        
     }
     
 

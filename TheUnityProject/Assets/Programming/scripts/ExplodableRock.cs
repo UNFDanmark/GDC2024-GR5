@@ -43,7 +43,7 @@ public class ExplodableRock : MonoBehaviour
         audioController = GameObject.Find("JohnnyBgoode").GetComponent<AudioController>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         dynamite = playerMovement.dynamite;

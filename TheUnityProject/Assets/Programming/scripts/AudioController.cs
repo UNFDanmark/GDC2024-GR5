@@ -8,17 +8,6 @@ public class AudioController : MonoBehaviour
     public List<AudioSource> bonk;
     
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void playAudio(int index)
     {
@@ -37,6 +26,22 @@ public class AudioController : MonoBehaviour
             AudioSource.Play();
             
             break;
+        }
+    }
+    public void stopAudio(int index)
+    {
+        foreach (var AudioSource in bonk)
+        {
+            if (!AudioSource.isPlaying)
+            {
+                continue;   
+            }
+            else if (AudioSource.isPlaying && AudioSource.clip == bink[index])
+            {
+                AudioSource.Stop();
+                break;
+            }
+
         }
     }
 }
