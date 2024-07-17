@@ -7,17 +7,20 @@ public class timer : MonoBehaviour
 {
 	
 	[SerializeField] public float timerer;
+	
 	Text timerText;
 	string strText;
     // Start is called before the first frame update
     void Start()
     {
+	    
      timerText = gameObject.GetComponent<Text>();   
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+	    
         timerer += Time.deltaTime;
 	strText = timerer.ToString("#.0");
 	timerText.text = strText;
