@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ArmLerp : MonoBehaviour
 {
+	/*
     [SerializeField] private Transform arm;
 	[SerializeField] private Transform cam;
 	

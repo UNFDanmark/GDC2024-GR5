@@ -35,6 +35,8 @@ public class ExplodableRock : MonoBehaviour
     private PlayerMovement playerMovement;
     private bool dynamite;
 
+    public Animator animator;
+
     private void Awake()
     {
         playerMovement = player.GetComponent<PlayerMovement>();
@@ -118,6 +120,7 @@ public class ExplodableRock : MonoBehaviour
                 audioController.playAudio(5);
                 clickedDynamite = true;
                 Destroy(Hint1);
+                animator.SetTrigger("PowerupsogDynamit");
             }
             else if (dist2 == minDistance && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButton(1)))
             {
@@ -125,6 +128,7 @@ public class ExplodableRock : MonoBehaviour
                 audioController.playAudio(5);
                 clickedDynamite = true;
                 Destroy(Hint2);
+                animator.SetTrigger("PowerupsogDynamit");
             }
             else if (dist3 == minDistance && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButton(1)))
             {
@@ -132,6 +136,7 @@ public class ExplodableRock : MonoBehaviour
                 audioController.playAudio(5);
                 clickedDynamite = true;
                 Destroy(Hint3);
+                animator.SetTrigger("PowerupsogDynamit");
             }
             else if (dist4 == minDistance && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButton(1)))
             {
@@ -139,6 +144,7 @@ public class ExplodableRock : MonoBehaviour
                 audioController.playAudio(5);
                 clickedDynamite = true;
                 Destroy(Hint4);
+                animator.SetTrigger("PowerupsogDynamit");
             }
 
         }

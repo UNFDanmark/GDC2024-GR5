@@ -50,11 +50,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        if (" " || " " || " ")
+        /*if ( || " " || " ")
         {
             animator.SetBool("PowerupsogDynamit", true);
         }
-
+*/
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         
         
