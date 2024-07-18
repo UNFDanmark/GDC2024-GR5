@@ -7,9 +7,10 @@ using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
+    float timer = 5f;
     float x;
     float z;
-
+    private bool startTimer;
     public GameObject victoryScreen;
 
     public CharacterController controller;
@@ -44,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip mainTrack;
     public AudioClip megaSuperHemmeligtTrack;
     public AudioClip secondaryTrack;
+	
 
     public bool secondaryIsPlaying;
     
@@ -58,7 +60,14 @@ public class PlayerMovement : MonoBehaviour
 
        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        
+	
+
+	if (startTimer == true)
+	{
+		quitTimer();
+	}	
+
+	        
         
         if (!isGrounded && velocity.y < fallingsound)
         {
@@ -150,7 +159,15 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-    
+    private void quitTimer()
+    {
+	timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+	    Debug.Log("done");
+            Application.Quit();
+        }
+    }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -171,7 +188,10 @@ public class PlayerMovement : MonoBehaviour
             victoryScreen.SetActive(true);
             audioController.playAudio(8);
             transform.position = new Vector3(1f, 17.1f, 5f);
-            gameObject.GetComponent<PlayerMovement>().enabled = false;
+	    startTimer = true;
+            
+		
+            
         }
     }
         
