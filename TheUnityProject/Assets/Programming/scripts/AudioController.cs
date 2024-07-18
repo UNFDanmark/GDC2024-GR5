@@ -7,7 +7,7 @@ public class AudioController : MonoBehaviour
 {
     public List<AudioClip> bink;
     public List<AudioSource> bonk;
-    public List<int> bank;
+    public List<float> bank;
     
     
 

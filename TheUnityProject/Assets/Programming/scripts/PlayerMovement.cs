@@ -117,8 +117,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
        
 
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.M) && Input.GetKey(KeyCode.O) &&
-            Input.GetKey(KeyCode.G) && Input.GetKey(KeyCode.U) && Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.M) && Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.W))
         {
             music.clip = megaSuperHemmeligtTrack;
             music.Play();
@@ -132,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("Character using Controller");
+            SceneManager.LoadScene("FinalLevel");
         }
         
         if (z != 0 || x != 0)

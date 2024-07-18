@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public class Mouselooking : MonoBehaviour
 {
     
     
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity = 50f;
 
     public Transform playerBody;
     
