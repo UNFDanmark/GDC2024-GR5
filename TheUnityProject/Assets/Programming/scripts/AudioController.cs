@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioController : MonoBehaviour
 {
     public List<AudioClip> bink;
     public List<AudioSource> bonk;
+    public List<int> bank;
     
     
 
@@ -23,8 +25,8 @@ public class AudioController : MonoBehaviour
             }
 
             AudioSource.clip = bink[index];
+            AudioSource.volume = bank[index];
             AudioSource.Play();
-            
             break;
         }
     }

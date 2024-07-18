@@ -60,6 +60,7 @@ public class ExplodableRock : MonoBehaviour
         if (timer <= 0)
         {
             audioController.playAudio(4);
+            
             Instantiate(explosionEffect, transform.position, transform.rotation);
             Destroy(parent);
             
