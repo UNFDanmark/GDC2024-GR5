@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             audioController.playAudio(9);
         }
         
-        if (isGrounded && velocity.y < lightfallsound && lightfallsound > fallsound)
+        if (isGrounded && velocity.y < lightfallsound && velocity.y > fallsound)
         {
             audioController.playAudio(3);
             
