@@ -170,6 +170,8 @@ public class PlayerMovement : MonoBehaviour
         {
             victoryScreen.SetActive(true);
             audioController.playAudio(8);
+            transform.position = new Vector3(1f, 17.1f, 5f);
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
         }
     }
         

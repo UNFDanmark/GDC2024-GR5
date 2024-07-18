@@ -29,6 +29,11 @@ public class EndScreen : MonoBehaviour
 	    timerer = timererer.timer;
 	strText = (timerer/60).ToString("#.0");
 	timerText.text = "it took you " + strText + " minutes to reach the surface";
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+	        Application.Quit();
+
+        }
     }
 
 }
