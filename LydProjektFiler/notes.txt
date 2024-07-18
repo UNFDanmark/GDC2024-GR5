@@ -1,0 +1,30 @@
+TODO
+- Music
+	- Peaceful soundtrack
+		.Wind effects
+		.Clay Flute? Understøttende
+	- Energisk soundtrack
+		- Orchestral version (Flute as epic boost)
+		- Guitar og flute som melodi
+			- Rytme og melodi fastslåes. Skal fungerer for melodien og temaet.
+			- Ny melodi for når trommerne får fart på. Ligesom sao
+		.Basic (Drums and shi)
+		- Evt. ekstra bass track hvor det skaber en riff melodi 
+		- Crashes?
+		- Solo? (El-Guitar el Violin)
+		- Flute intro -> Drums -> Guitar solo (overtager) -> Fyr noget flute på
+		- Efficiency. Better drums. Using chords to make energizing. Fede instrumenter og effekter (jeg bruger flute, ellers spørg mentor).
+
+		- Drums good but fix it. Effects. Not too much. More variation?
+		- Flute backing? 
+		- Højere gain for alt. Footsteps, soundtrack, explosion
+		
+		- Sound testing. Implementation og bestemmelse om lydstyrke er alright.
+- Sound effects
+	.Footsteps
+	.Jump
+	.Fall
+	.Ability pickup
+	.Dynamite explosion
+	.Stone falling
+	- Implementation?
