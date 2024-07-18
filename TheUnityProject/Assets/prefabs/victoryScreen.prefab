@@ -25,16 +25,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4246215079063377}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7489547668563418853}
+  m_Father: {fileID: 331856158173366407}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 41}
   m_SizeDelta: {x: 960, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2920342073842783746
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.71887976, g: 0.9330371, b: 0.9811321, a: 1}
+  m_Color: {r: 0.4784224, g: 0.69490546, b: 0.74213827, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -154,7 +154,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: it took you 144 years to get revenge
+  m_Text: It took you 144 years to get revenge
 --- !u!114 &451704645882836534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ravine
+  m_Text: Ravine
 --- !u!1001 &6401013955099037969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6093047452937982843}
-    - targetCorrespondingSourceObject: {fileID: 4549989858691305460, guid: e04aa48c613689d41baccb2440891c81,
+    - targetCorrespondingSourceObject: {fileID: 6651259394187860374, guid: e04aa48c613689d41baccb2440891c81,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6557205685449251858}
@@ -484,9 +484,3 @@ MonoBehaviour:
   timererer: {fileID: 0}
   timerer: 0
   chronos: {fileID: 0}
---- !u!224 &7489547668563418853 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4549989858691305460, guid: e04aa48c613689d41baccb2440891c81,
-    type: 3}
-  m_PrefabInstance: {fileID: 6401013955099037969}
-  m_PrefabAsset: {fileID: 0}
