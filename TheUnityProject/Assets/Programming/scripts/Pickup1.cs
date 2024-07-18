@@ -12,6 +12,9 @@ public class Pickup1 : MonoBehaviour
     public GameObject pickupEffect;
     
     public AudioController audioController;
+
+    public Animator animator;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -38,12 +41,14 @@ public class Pickup1 : MonoBehaviour
 
         void Pickup(Collider player)
         {
-            Instantiate(pickupEffect, transform.position, transform.rotation); //add nogle effekter i inspektoren
+            Instantiate(pickupEffect, transform.position, transform.rotation); 
 
             PlayerMovement pickup = player.GetComponent<PlayerMovement>();
             pickup.dynamite = true;
             
             audioController.playAudio(2);
+            
+            animator.SetTrigger("PowerupsogDynamit");
             
         }
     }
