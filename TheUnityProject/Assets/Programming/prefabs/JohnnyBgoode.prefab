@@ -110,9 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6ce9e603bf9ea478ea600a03a86ccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverScreen: {fileID: 0}
+  victoryScreen: {fileID: 0}
   controller: {fileID: 430498745318329715}
-  body: {fileID: 6015264907871568985}
   speed: 15
   gravity: -9.81
   jump: 7
@@ -125,6 +124,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   audioController: {fileID: 7819493409229599777}
+  music: {fileID: 0}
+  mainTrack: {fileID: 0}
+  megaSuperHemmeligtTrack: {fileID: 0}
+  secondaryTrack: {fileID: 0}
+  secondaryIsPlaying: 0
 --- !u!136 &6015264907871568985
 CapsuleCollider:
   m_ObjectHideFlags: 0

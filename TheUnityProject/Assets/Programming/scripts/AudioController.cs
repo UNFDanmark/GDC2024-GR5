@@ -1,24 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioController : MonoBehaviour
 {
     public List<AudioClip> bink;
     public List<AudioSource> bonk;
+    public List<int> bank;
     
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void playAudio(int index)
     {
@@ -34,9 +25,25 @@ public class AudioController : MonoBehaviour
             }
 
             AudioSource.clip = bink[index];
+            AudioSource.volume = bank[index];
             AudioSource.Play();
-            
             break;
+        }
+    }
+    public void stopAudio(int index)
+    {
+        foreach (var AudioSource in bonk)
+        {
+            if (!AudioSource.isPlaying)
+            {
+                continue;   
+            }
+            else if (AudioSource.isPlaying && AudioSource.clip == bink[index])
+            {
+                AudioSource.Stop();
+                break;
+            }
+
         }
     }
 }
