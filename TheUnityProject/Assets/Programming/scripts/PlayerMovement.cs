@@ -22,13 +22,17 @@ public class PlayerMovement : MonoBehaviour
     public float superJump = 10f;
     private bool isMoving;
     
+    
 
     private float bonusJump;
     public float jumpPickup;
     private float maxJumpAmount;
     private float jumpAmount = 1;
     public bool dynamite;
-
+    public float lightfallsound = -5f;
+    public float fallsound = -15f;
+    public float fallingsound = -5f;
+    
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -56,19 +60,26 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         
         
+        if (!isGrounded && velocity.y < fallingsound)
+        {
+            audioController.playAudio(9);
+        }
         
-        if (isGrounded && velocity.y < -5)
+        if (isGrounded && velocity.y < lightfallsound)
         {
             audioController.playAudio(3);
+            
         }
-        if (isGrounded && velocity.y < -15)
+        if (isGrounded && velocity.y < fallsound)
         {
             audioController.playAudio(1);
+            
         }
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
             maxJumpAmount = jumpAmount + jumpPickup;
+            audioController.stopAudio(9);
         }
         
         
@@ -80,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
             maxJumpAmount -= 1;
 
             audioController.playAudio(0);
+            
 
 
         }
@@ -90,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
             maxJumpAmount -= 1;
 
             audioController.playAudio(0);
+            
         }
 
         x = Input.GetAxis("Horizontal");
@@ -157,6 +170,7 @@ public class PlayerMovement : MonoBehaviour
         if (hit.gameObject.CompareTag("End")) 
         {
             victoryScreen.SetActive(true);
+            audioController.playAudio(8);
         }
     }
         
